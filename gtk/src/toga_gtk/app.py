@@ -219,9 +219,9 @@ class App:
             self.native_about_dialog.set_website(self.interface.home_page)
 
         self.native_about_dialog.show()
-        self.native_about_dialog.connect("close", self._close_about)
+        self.native_about_dialog.connect("response", self._close_about)
 
-    def _close_about(self, dialog):
+    def _close_about(self, dialog, response):
         self.native_about_dialog.destroy()
         self.native_about_dialog = None
 
